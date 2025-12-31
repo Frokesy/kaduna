@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Header from './Header';
+import Header from '../defaults/Header';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 
