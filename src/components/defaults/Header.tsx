@@ -1,4 +1,4 @@
-import { HamburgerIcon } from '../Icons';
+import { CaretDownIcon, HamburgerIcon } from '../Icons';
 
 const Header = () => {
   return (
@@ -8,10 +8,16 @@ const Header = () => {
       </div>
       <div className="hidden lg:flex items-center space-x-10 uppercase">
         <img src="/assets/logo.svg" alt="img" />
-        <span className="cursor-pointer">Home</span>
-        <span className="cursor-pointer">About</span>
+        <span className="cursor-pointer pl-10">Home</span>
+        <div className="flex items-center space-x-3 cursor-pointer">
+          <span>About</span>
+          <CaretDownIcon />
+        </div>
         <span className="cursor-pointer">Programmes</span>
-        <span className="cursor-pointer">Media</span>
+        <div className="flex items-center space-x-3 cursor-pointer">
+          <span>Media</span>
+          <CaretDownIcon />
+        </div>
         <span className="cursor-pointer">Blog</span>
       </div>
 

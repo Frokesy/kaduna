@@ -1,121 +1,117 @@
 import { useEffect, useState } from 'react';
 import Header from './Header';
-import { motion, AnimatePresence } from 'framer-motion';
-import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 
-const backgroundImages = [
-  '/assets/hero-imgs/hero.png',
-  '/assets/hero-imgs/img-two.png',
-  '/assets/hero-imgs/img-three.png',
+const slides = [
+  {
+    image: '/assets/hero-imgs/hero.png',
+    title: 'Interfaith Education for peace, reconciliation and development',
+    description:
+      'Investing in an understanding between Muslims and Christians. Join us now to achieve the dream of positive interpersonal relations and donate to our cause.',
+  },
+  {
+    image: '/assets/hero-imgs/img-two.png',
+    title: 'Building bridges through dialogue and mutual respect',
+    description:
+      'We foster understanding that strengthens communities and promotes peaceful coexistence.',
+  },
+  {
+    image: '/assets/hero-imgs/img-three.png',
+    title: 'Empowering communities for sustainable peace',
+    description:
+      'Education and collaboration are at the heart of long-lasting development.',
+  },
 ];
+
+const imageVariants: Variants = {
+  initial: { x: '100%', scale: 2, opacity: 1 },
+  animate: {
+    x: 0,
+    scale: 1,
+    opacity: 1,
+    transition: { duration: 1.2, ease: [0.43, 0.13, 0.23, 0.96] },
+  },
+};
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const [prevImage, setPrevImage] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % backgroundImages.length);
+      setPrevImage(currentImage);
+      setCurrentImage((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
-
-  const heroVariants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
-  const contentVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: (i: number) => ({
-      opacity: 1,
-      x: 0,
-      transition: { delay: i * 0.3, duration: 0.6 },
-    }),
-  };
+  }, [currentImage]);
 
   return (
-    <div className="relative lg:min-h-screen">
-      <AnimatePresence mode="wait">
+    <div className="relative lg:min-h-screen overflow-hidden">
+      <div className="absolute inset-0 w-full lg:h-screen z-0">
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-no-repeat"
+          style={{ backgroundImage: `url(${slides[prevImage].image})` }}
+        />
         <motion.div
           key={currentImage}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.2 }}
-          className="absolute inset-0 w-full h-full bg-cover bg-no-repeat z-0"
-          style={{ backgroundImage: `url(${backgroundImages[currentImage]})` }}
-        ></motion.div>
-      </AnimatePresence>
-      <div className="relative lg:absolute lg:inset-0 bg-black/40 lg:text-[#ffffff] text-[#333] z-10 w-full flex flex-col">
-        <motion.div variants={heroVariants} initial="hidden" animate="visible">
+          variants={imageVariants}
+          initial="initial"
+          animate="animate"
+          whileHover={{ scale: 1.02, rotateY: 3 }}
+          className="absolute inset-0 w-full h-full bg-cover bg-no-repeat cursor-pointer"
+          style={{ backgroundImage: `url(${slides[currentImage].image})` }}
+        />
+      </div>
+
+      <div className="relative lg:absolute lg:inset-0 bg-black/40 text-white z-10 w-full lg:h-screen flex flex-col">
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <Header />
         </motion.div>
 
-        <div className="lg:w-[80vw] w-[90vw] mx-auto mt-6 lg:mt-[20vh] z-20">
-          <motion.h2
-            className="lg:text-[#DFBD00] text-[#00689e] font-semibold"
-            custom={0}
-            variants={contentVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            The Tax Club, University of Lagos
-          </motion.h2>
-
-          <motion.h2
-            className="lg:block hidden text-[56px] font-semibold"
-            custom={1}
-            variants={contentVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            Shaping the Future of Taxation, <br /> one step at a time
-          </motion.h2>
-
-          <motion.h2
-            className="lg:hidden text-[22px] font-bold"
-            custom={1}
-            variants={contentVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            Shaping the Future of Taxation, one step at a time
-          </motion.h2>
-
-          <motion.p
-            className="lg:w-[60%] mt-3 lg:pl-0 lg:border-none pl-4 border-l-4 border-[#00689E]"
-            custom={2}
-            variants={contentVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            We are a dynamic community of young and passionate individuals
-            dedicated to mastering the field of taxation and spreading the
-            gospel of taxation. We are the First, and we have no equals.
-          </motion.p>
-
+        <div className="w-[90vw] mx-auto lg:mb-0 mb-[20vh] mt-[20vh] z-20">
           <motion.div
-            className="mt-10 flex lg:flex-row flex-col lg:space-x-10 space-y-6 lg:space-y-0 lg:text-[20px]"
-            custom={3}
-            variants={contentVariants}
-            initial="hidden"
-            animate="visible"
+            key={currentImage}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.6 }}
           >
-            <NavLink
-              to="https://forms.gle/fUCN99VZVev6WNLTA"
-              target="_blank"
-              className="bg-[#00689e] text-center text-white px-20 py-3 rounded-lg font-semibold hover:bg-[#005a7a] transition-all duration-300 ease-in-out"
-            >
-              Partner with us
-            </NavLink>
-            <a
-              href="https://bit.ly/applicationformttcunilag"
-              target="_blank"
-              className="border border-[#00689e] text-[#00689e] flex items-center justify-center lg:px-20 py-3 rounded-lg font-semibold hover:bg-[#00689e] hover:text-white transition-all duration-300 ease-in-out"
-            >
-              Become a Member
-            </a>
+            <h2 className="lg:text-[60px] text-[30px] font-semibold text-center lg:w-[65%] mx-auto">
+              {slides[currentImage].title}
+            </h2>
+            <p className="lg:w-[60%] lg:text-[20px] text-center mx-auto mt-3">
+              {slides[currentImage].description}
+            </p>
           </motion.div>
+        </div>
+
+        <div className="flex justify-center mt-auto mb-10 space-x-3 items-center">
+          {slides.map((_, index) => {
+            const isActive = currentImage === index;
+            return (
+              <div
+                key={index}
+                className={`relative h-2 w-24 rounded-full border ${
+                  isActive ? 'border-[#2F6646]' : 'border-[#D0D5DD]'
+                } overflow-hidden`}
+              >
+                {isActive && (
+                  <motion.div
+                    key={currentImage}
+                    initial={{ width: '0%' }}
+                    animate={{ width: '100%' }}
+                    transition={{ duration: 5, ease: 'linear' }}
+                    className="absolute left-0 top-0 h-full bg-[#2F6646]"
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
