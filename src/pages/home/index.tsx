@@ -1,4 +1,5 @@
 import About from '../../components/home/About';
+import Donate from '../../components/home/Donate';
 import Hero from '../../components/home/Hero';
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <div>
       <Hero />
       <About />
+      <Donate />
     </div>
   );
 };
