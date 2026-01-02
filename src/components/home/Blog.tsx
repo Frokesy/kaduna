@@ -35,7 +35,7 @@ const Blog = () => {
     },
   ];
   return (
-    <div className="mt-[10vh]">
+    <div className="my-[10vh]">
       <div className="h-10 bg-[#f1f1f1]"></div>
       <div className="w-[90vw] mx-auto">
         <div className="flex mt-10">
