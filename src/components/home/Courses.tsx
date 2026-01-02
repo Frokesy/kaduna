@@ -1,6 +1,12 @@
+import { useRef, useState, useEffect } from 'react';
 import { CertificateTag, DiplomaTag } from '../Icons';
 
 const Courses = () => {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [disablePrev, setDisablePrev] = useState(true);
+  const [disableNext, setDisableNext] = useState(false);
+  const [cardWidth, setCardWidth] = useState(0);
+
   const courseItems = [
     {
       id: 1,
@@ -20,7 +26,44 @@ const Courses = () => {
       backgroundImg: '/assets/course-imgs/img-three.jpg',
       tag: <DiplomaTag />,
     },
+    {
+      id: 4,
+      title: 'Islamic theology',
+      backgroundImg: '/assets/course-imgs/img-three.jpg',
+      tag: <DiplomaTag />,
+    },
   ];
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      const firstCard = scrollRef.current.querySelector('.course-card');
+      if (firstCard) {
+        const styles = window.getComputedStyle(firstCard as HTMLElement);
+        const gap = parseFloat(styles.marginRight || '0');
+        setCardWidth((firstCard as HTMLElement).clientWidth + gap);
+      }
+    }
+  }, []);
+
+  const updateButtonState = () => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+
+    setDisablePrev(scrollLeft <= 0);
+    setDisableNext(scrollLeft + clientWidth >= scrollWidth - 5);
+  };
+
+  const scrollByAmount = (amount: number) => {
+    if (!scrollRef.current) return;
+
+    scrollRef.current.scrollBy({
+      left: amount,
+      behavior: 'smooth',
+    });
+
+    setTimeout(updateButtonState, 300);
+  };
+
   return (
     <div className="mt-[10vh]">
       <div className="flex flex-col w-[90vw] mx-auto text-center space-y-2">
@@ -35,18 +78,52 @@ const Courses = () => {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-6 gap-10 lg:w-[90vw] w-[95vw] mx-auto mt-10 mb-20">
+      <div
+        ref={scrollRef}
+        onScroll={updateButtonState}
+        className="w-[90vw] mx-auto mt-6 flex lg:space-x-10 space-x-4 overflow-x-hidden flex-nowrap"
+      >
         {courseItems.map((course) => (
-          <div key={course.id} className="bg-[#ffffff] rounded-b-2xl shadow-lg">
+          <div
+            key={course.id}
+            className="course-card shrink-0 mb-10 bg-white rounded-b-2xl shadow-lg lg:w-100 w-[80vw]"
+          >
             <div
               className="h-55 bg-cover bg-center flex items-end justify-end"
               style={{ backgroundImage: `url(${course.backgroundImg})` }}
             >
               <div className="p-4">{course.tag}</div>
             </div>
+
             <h3 className="text-[20px] text-[#101B28] p-4">{course.title}</h3>
           </div>
         ))}
+      </div>
+
+      <div className="w-[90vw] mx-auto flex justify-center space-x-10">
+        <button
+          onClick={() => scrollByAmount(-cardWidth)}
+          disabled={disablePrev}
+          className={`bg-white shadow px-4 py-2 rounded-full ${
+            disablePrev ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
+        >
+          ◀
+        </button>
+
+        <button
+          onClick={() => scrollByAmount(cardWidth)}
+          disabled={disableNext}
+          className={`bg-white shadow px-4 py-2 rounded-full ${
+            disableNext ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
+        >
+          ▶
+        </button>
+      </div>
+
+      <div className="flex justify-end w-[90vw] mx-auto mt-6">
+        <button>View all courses</button>
       </div>
     </div>
   );
