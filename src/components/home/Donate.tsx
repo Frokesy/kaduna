@@ -15,7 +15,7 @@ const Donate = () => {
   ];
   return (
     <div className="mt-[10vh]">
-      <div className="h-10 bg-[#cccccc]"></div>
+      <div className="h-10 bg-[#f1f1f1]"></div>
       <div className="mt-[10vh]">
         <div className="flex flex-col w-[90vw] mx-auto space-y-2">
           <p className="text-[#214832] text-[16px] font-semibold">Donate now</p>
