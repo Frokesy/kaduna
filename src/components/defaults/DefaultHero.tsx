@@ -27,7 +27,7 @@ const DefaultHero = ({ title, img }: { title: string; img: string }) => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="lg:text-[128px] text-[50px] font-semibold uppercase text-center lg:w-[65%] mx-auto">
+            <h2 className="lg:text-[100px] text-[50px] font-semibold uppercase text-center lg:w-[65%] mx-auto">
               {title}
             </h2>
           </motion.div>

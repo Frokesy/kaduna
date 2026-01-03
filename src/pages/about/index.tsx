@@ -5,7 +5,7 @@ import {
   CaretDownIcon,
   MissionIcon,
 } from '../../components/Icons';
-import { items, principles, qa } from '../../components/data';
+import { aboutItems, aboutPrinciples, qa } from '../../components/data';
 import Newsletter from '../../components/home/Newsletter';
 
 const About = () => {
@@ -62,7 +62,7 @@ const About = () => {
           </div>
 
           <div className="lg:w-[35%] lg:mt-0 mt-10">
-            {items.map((item) => (
+            {aboutItems.map((item) => (
               <div key={item.id} className="mb-6 bg-white rounded-b-2xl">
                 <img src={item.img} alt={item.title} className="w-full" />
                 <h3 className="lg:text-[20px] text-[#101B28] lg:p-8 p-4">
@@ -99,7 +99,7 @@ const About = () => {
 
         <div className="mt-10 flex justify-between lg:flex-row flex-col items-center">
           <div className="grid lg:grid-cols-2 lg:gap-10 gap-6 lg:w-[50%]">
-            {principles.map((principle) => (
+            {aboutPrinciples.map((principle) => (
               <div key={principle.id} className="lg:pl-20 pl-6">
                 <h3 className="lg:text-[20px] text-[18px] font-semibold text-[#101B28]">
                   {principle.title}

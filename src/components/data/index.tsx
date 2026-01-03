@@ -38,7 +38,7 @@ export const qa = [
   },
 ];
 
-export const principles = [
+export const aboutPrinciples = [
   {
     id: 1,
     title: 'Knowledge of each other',
@@ -66,7 +66,7 @@ export const principles = [
   },
 ];
 
-export const items = [
+export const aboutItems = [
   {
     id: 1,
     title: 'To Educate Nigerians on peace and peaceful co-existence',
@@ -81,5 +81,44 @@ export const items = [
     id: 3,
     title: 'To organize and teach courses of studies in Islam and Christianity',
     img: '/assets/about-imgs/img-four.png',
+  },
+];
+
+export const boardOfTrustees = [
+  {
+    id: 1,
+    name: 'Archbishop Josiah Idowu-Fearon, OON',
+    title: 'Founder & Director',
+    img: '/assets/bot/img-one.png',
+  },
+  {
+    id: 2,
+    name: 'HRH Alhaji Najib Hussaini Adamu, CON',
+    title: 'Member',
+    img: '/assets/bot/img-two.png',
+  },
+  {
+    id: 3,
+    name: 'His Eminence, John Cardinal Onaiyekan, CON',
+    title: 'Member',
+    img: '/assets/bot/img-three.png',
+  },
+  {
+    id: 4,
+    name: 'Alhaji Muhammad Mahdi Shehu',
+    title: 'Member',
+    img: '/assets/bot/img-four.png',
+  },
+  {
+    id: 5,
+    name: 'Mrs. Comfort Amina Idowu-Fearon',
+    title: 'Member',
+    img: '/assets/bot/img-five.png',
+  },
+  {
+    id: 6,
+    name: 'Imam Muhammad Sani Isah',
+    title: 'Member',
+    img: '/assets/bot/img-six.png',
   },
 ];

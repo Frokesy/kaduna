@@ -312,3 +312,115 @@ export const CalendarIcon = () => (
     />
   </svg>
 );
+
+export const BotIcon = () => (
+  <svg
+    width="110"
+    height="110"
+    viewBox="0 0 110 110"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g filter="url(#filter0_dd_125_32811)">
+      <rect x="25" y="5" width="60" height="60" rx="28" fill="#EAF0ED" />
+      <rect
+        x="25"
+        y="5"
+        width="60"
+        height="60"
+        rx="28"
+        stroke="white"
+        strokeWidth="10"
+      />
+      <path
+        d="M63.2364 40C64.1106 40 64.8059 39.4499 65.4302 38.6807C66.7082 37.106 64.6099 35.8476 63.8096 35.2314C62.996 34.6049 62.0877 34.25 61.1667 34.1667M60 31.8333C61.6108 31.8333 62.9167 30.5275 62.9167 28.9167C62.9167 27.3058 61.6108 26 60 26"
+        stroke="#142B1D"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M42.7637 40C41.8895 40 41.1942 39.4499 40.5699 38.6807C39.2919 37.106 41.3902 35.8476 42.1905 35.2314C43.0041 34.6049 43.9124 34.25 44.8334 34.1667M45.4167 31.8333C43.8059 31.8333 42.5001 30.5275 42.5001 28.9167C42.5001 27.3058 43.8059 26 45.4167 26"
+        stroke="#142B1D"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M48.4312 36.6297C47.2391 37.3668 44.1136 38.8719 46.0172 40.7553C46.9472 41.6753 47.9829 42.3333 49.285 42.3333H56.7152C58.0173 42.3333 59.053 41.6753 59.9829 40.7553C61.8866 38.8719 58.7611 37.3668 57.569 36.6297C54.7736 34.9012 51.2266 34.9012 48.4312 36.6297Z"
+        stroke="#142B1D"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M57.0834 27.75C57.0834 30.0052 55.2552 31.8334 53.0001 31.8334C50.7449 31.8334 48.9167 30.0052 48.9167 27.75C48.9167 25.4949 50.7449 23.6667 53.0001 23.6667C55.2552 23.6667 57.0834 25.4949 57.0834 27.75Z"
+        stroke="#142B1D"
+        strokeWidth="1.5"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_dd_125_32811"
+        x="0"
+        y="0"
+        width="110"
+        height="110"
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feMorphology
+          radius="4"
+          operator="erode"
+          in="SourceAlpha"
+          result="effect1_dropShadow_125_32811"
+        />
+        <feOffset dy="8" />
+        <feGaussianBlur stdDeviation="4" />
+        <feColorMatrix
+          type="matrix"
+          values="0 0 0 0 0.0627451 0 0 0 0 0.0941176 0 0 0 0 0.156863 0 0 0 0.03 0"
+        />
+        <feBlend
+          mode="normal"
+          in2="BackgroundImageFix"
+          result="effect1_dropShadow_125_32811"
+        />
+        <feColorMatrix
+          in="SourceAlpha"
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feMorphology
+          radius="4"
+          operator="erode"
+          in="SourceAlpha"
+          result="effect2_dropShadow_125_32811"
+        />
+        <feOffset dy="20" />
+        <feGaussianBlur stdDeviation="12" />
+        <feColorMatrix
+          type="matrix"
+          values="0 0 0 0 0.0627451 0 0 0 0 0.0941176 0 0 0 0 0.156863 0 0 0 0.08 0"
+        />
+        <feBlend
+          mode="normal"
+          in2="effect1_dropShadow_125_32811"
+          result="effect2_dropShadow_125_32811"
+        />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="effect2_dropShadow_125_32811"
+          result="shape"
+        />
+      </filter>
+    </defs>
+  </svg>
+);
