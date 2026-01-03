@@ -1,3 +1,4 @@
+import Footer from '../../components/defaults/Footer';
 import About from '../../components/home/About';
 import Blog from '../../components/home/Blog';
 import Courses from '../../components/home/Courses';
@@ -16,6 +17,7 @@ const Home = () => {
       <Blog />
       <Partners />
       <Newsletter />
+      <Footer />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import DefaultHero from '../../../components/defaults/DefaultHero';
 import { videoItems } from '../../../components/data';
 import Newsletter from '../../../components/home/Newsletter';
+import Footer from '../../../components/defaults/Footer';
 
 const Videos = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -120,6 +121,7 @@ const Videos = () => {
       </div>
 
       <Newsletter />
+      <Footer />
     </div>
   );
 };

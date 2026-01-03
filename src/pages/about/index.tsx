@@ -7,6 +7,7 @@ import {
 } from '../../components/Icons';
 import { aboutItems, aboutPrinciples, qa } from '../../components/data';
 import Newsletter from '../../components/home/Newsletter';
+import Footer from '../../components/defaults/Footer';
 
 const About = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -167,6 +168,7 @@ const About = () => {
         </div>
       </div>
       <Newsletter />
+      <Footer />
     </div>
   );
 };

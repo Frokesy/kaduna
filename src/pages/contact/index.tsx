@@ -1,3 +1,4 @@
+import Footer from '../../components/defaults/Footer';
 import Header from '../../components/defaults/Header';
 import Newsletter from '../../components/home/Newsletter';
 import {
@@ -141,6 +142,7 @@ const Contact = () => {
       </div>
 
       <Newsletter />
+      <Footer />
     </div>
   );
 };

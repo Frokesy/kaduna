@@ -1,5 +1,6 @@
 import { staff } from '../../../components/data';
 import DefaultHero from '../../../components/defaults/DefaultHero';
+import Footer from '../../../components/defaults/Footer';
 import Newsletter from '../../../components/home/Newsletter';
 import { BotIcon } from '../../../components/Icons';
 
@@ -44,6 +45,7 @@ const Staff = () => {
         </div>
       </div>
       <Newsletter />
+      <Footer />
     </div>
   );
 };
