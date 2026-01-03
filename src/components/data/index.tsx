@@ -122,3 +122,42 @@ export const boardOfTrustees = [
     img: '/assets/bot/img-six.png',
   },
 ];
+
+export const staff = [
+  {
+    id: 1,
+    name: 'Very Rev. John Shettima',
+    title: 'Lecturer',
+    img: '/assets/staff/img-one.png',
+  },
+  {
+    id: 2,
+    name: 'Imam Muhammad Sani Isah',
+    title: 'Member',
+    img: '/assets/bot/img-six.png',
+  },
+  {
+    id: 3,
+    name: 'Mal. Abdullahi M. Sufi',
+    title: 'Lecturer',
+    img: '/assets/staff/img-two.png',
+  },
+  {
+    id: 4,
+    name: 'Mrs. Dupe Olumorin',
+    title: 'Admin Officer',
+    img: '/assets/staff/img-three.png',
+  },
+  {
+    id: 5,
+    name: 'Mr. Ndanusa Fearon',
+    title: 'Maintenance and works officer',
+    img: '/assets/staff/img-four.png',
+  },
+  {
+    id: 6,
+    name: 'Ven. Joshua Mallam',
+    title: 'Coordinator',
+    img: '/assets/staff/img-five.png',
+  },
+];
