@@ -9,7 +9,7 @@ import {
 const Contact = () => {
   return (
     <div>
-      <Header />
+      <Header color="black" />
 
       <div className="flex lg:flex-row flex-col justify-between items-center my-[10vh]">
         <div className="lg:w-[55%] lg:px-20 w-[90%]">

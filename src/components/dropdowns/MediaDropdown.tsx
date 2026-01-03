@@ -15,7 +15,7 @@ const MediaDropdown = () => {
         <NavLink
           key={item.id}
           to={item.link}
-          className="hover:bg-gray-200 hover:rounded-xl p-3 flex items-center space-x-3 transition-all duration-300 ease-in-out lg:border-none border-b-2 border-[#404040]"
+          className="hover:bg-gray-200 hover:rounded-xl p-3 flex items-center space-x-3 transition-all duration-300 ease-in-out lg:border-none border-b-2 border-[#cccccc]"
         >
           {/* <div className="scale-50">{item.icon}</div> */}
           <div className="">
