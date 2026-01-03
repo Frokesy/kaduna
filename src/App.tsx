@@ -5,6 +5,7 @@ import About from './pages/about';
 import BoardOfTrustees from './pages/about/b.o.t';
 import Staff from './pages/about/staff';
 import Contact from './pages/contact';
+import Videos from './pages/media/videos';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -13,6 +14,7 @@ const App = () => {
     { path: '/about/b.o.t', element: <BoardOfTrustees /> },
     { path: '/about/staff', element: <Staff /> },
     { path: '/contact', element: <Contact /> },
+    { path: '/media/videos', element: <Videos /> },
   ]);
 
   return (

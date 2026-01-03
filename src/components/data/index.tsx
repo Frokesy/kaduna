@@ -161,3 +161,76 @@ export const staff = [
     img: '/assets/staff/img-five.png',
   },
 ];
+
+export const videoItems = [
+  {
+    id: 1,
+    title: 'The Permanent Site Project - The Journey so Far',
+    excerpt:
+      'A short documentary on the Permanent Site construction project of the Kaduna Centre for the Study of Christian-Muslim Relations.',
+    img: '/assets/media/video-one.png',
+  },
+  {
+    id: 2,
+    title: 'The Permanent Site Project - The Journey so Far',
+    excerpt:
+      'A short documentary on the Permanent Site construction project of the Kaduna Centre for the Study of Christian-Muslim Relations.',
+    img: '/assets/media/video-one.png',
+  },
+  {
+    id: 3,
+    title: 'The Permanent Site Project - The Journey so Far',
+    excerpt:
+      'A short documentary on the Permanent Site construction project of the Kaduna Centre for the Study of Christian-Muslim Relations.',
+    img: '/assets/media/video-one.png',
+  },
+  {
+    id: 4,
+    title: 'The Permanent Site Project - The Journey so Far',
+    excerpt:
+      'A short documentary on the Permanent Site construction project of the Kaduna Centre for the Study of Christian-Muslim Relations.',
+    img: '/assets/media/video-one.png',
+  },
+  {
+    id: 5,
+    title: 'The Permanent Site Project - The Journey so Far',
+    excerpt:
+      'A short documentary on the Permanent Site construction project of the Kaduna Centre for the Study of Christian-Muslim Relations.',
+    img: '/assets/media/video-one.png',
+  },
+  {
+    id: 6,
+    title: 'The Permanent Site Project - The Journey so Far',
+    excerpt:
+      'A short documentary on the Permanent Site construction project of the Kaduna Centre for the Study of Christian-Muslim Relations.',
+    img: '/assets/media/video-one.png',
+  },
+  {
+    id: 7,
+    title: 'The Permanent Site Project - The Journey so Far',
+    excerpt:
+      'A short documentary on the Permanent Site construction project of the Kaduna Centre for the Study of Christian-Muslim Relations.',
+    img: '/assets/media/video-one.png',
+  },
+  {
+    id: 8,
+    title: 'The Permanent Site Project - The Journey so Far',
+    excerpt:
+      'A short documentary on the Permanent Site construction project of the Kaduna Centre for the Study of Christian-Muslim Relations.',
+    img: '/assets/media/video-one.png',
+  },
+  {
+    id: 9,
+    title: 'The Permanent Site Project - The Journey so Far',
+    excerpt:
+      'A short documentary on the Permanent Site construction project of the Kaduna Centre for the Study of Christian-Muslim Relations.',
+    img: '/assets/media/video-one.png',
+  },
+  {
+    id: 10,
+    title: 'The Permanent Site Project - The Journey so Far',
+    excerpt:
+      'A short documentary on the Permanent Site construction project of the Kaduna Centre for the Study of Christian-Muslim Relations.',
+    img: '/assets/media/video-one.png',
+  },
+];
