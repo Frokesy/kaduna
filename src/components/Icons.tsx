@@ -16,7 +16,7 @@ export const HamburgerIcon = () => (
   </svg>
 );
 
-export const CaretDownIcon = () => (
+export const CaretDownIcon = ({ color }: { color?: string }) => (
   <svg
     width="20"
     height="20"
@@ -26,7 +26,7 @@ export const CaretDownIcon = () => (
   >
     <path
       d="M5 7.5L10 12.5L15 7.5"
-      stroke="white"
+      stroke={color || 'white'}
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
