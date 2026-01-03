@@ -18,7 +18,9 @@ const Header = ({ color }: { color?: string }) => {
         </div>
         <div className="hidden lg:flex items-center space-x-10 uppercase">
           <img src="/assets/logo.svg" alt="img" />
-          <span className="cursor-pointer pl-10">Home</span>
+          <NavLink to="/" className="cursor-pointer pl-10">
+            Home
+          </NavLink>
           <div className="relative">
             <div
               onMouseEnter={() => setShowAboutDropdown(true)}
