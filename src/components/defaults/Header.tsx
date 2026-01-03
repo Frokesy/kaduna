@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { CaretDownIcon, HamburgerIcon } from '../Icons';
 import { AnimatePresence } from 'framer-motion';
 import AboutDropdown from '../dropdowns/AboutDropdown';
+import MediaDropdown from '../dropdowns/MediaDropdown';
 
 const Header = () => {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
@@ -37,9 +38,26 @@ const Header = () => {
           </AnimatePresence>
         </div>
         <span className="cursor-pointer">Programmes</span>
-        <div className="flex items-center space-x-3 cursor-pointer">
-          <span>Media</span>
-          <CaretDownIcon />
+        <div className="relative">
+          <div
+            onMouseEnter={() => setShowMediaDropdown(true)}
+            onMouseLeave={() => setShowMediaDropdown(false)}
+            className="flex items-center space-x-3 cursor-pointer"
+          >
+            <span>Media</span>
+            <CaretDownIcon />
+          </div>
+
+          <AnimatePresence>
+            {showMediaDropdown && (
+              <div
+                onMouseEnter={() => setShowMediaDropdown(true)}
+                onMouseLeave={() => setShowMediaDropdown(false)}
+              >
+                <MediaDropdown />
+              </div>
+            )}
+          </AnimatePresence>
         </div>
         <span className="cursor-pointer">Blog</span>
       </div>

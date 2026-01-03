@@ -23,3 +23,27 @@ export const aboutDropdown = [
     icon: <BotIcon />,
   },
 ];
+
+export const mediaDropdown = [
+  {
+    id: 1,
+    title: 'News',
+    excerpt: 'The latest industry news, updates, and info',
+    link: '#',
+    icon: <MissionIcon />,
+  },
+  {
+    id: 2,
+    title: 'Watch Videos',
+    excerpt: 'Learn how our customers are making big changes',
+    link: '/media/videos',
+    icon: <BotIcon />,
+  },
+  {
+    id: 3,
+    title: 'Gallery',
+    excerpt: 'Get up and running on new features and techniques',
+    link: '#',
+    icon: <BotIcon />,
+  },
+];
