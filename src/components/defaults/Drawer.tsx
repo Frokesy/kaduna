@@ -51,7 +51,7 @@ const Drawer = () => {
           {showMediaDropdown && <MediaDropdown />}
         </AnimatePresence>
       </div>
-      <NavLink to="#">Blog</NavLink>
+      <NavLink to="/blog">Blog</NavLink>
       <NavLink to="/contact">Contact</NavLink>
     </div>
   );

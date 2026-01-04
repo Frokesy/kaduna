@@ -66,7 +66,9 @@ const Header = ({ color }: { color?: string }) => {
               )}
             </AnimatePresence>
           </div>
-          <span className="cursor-pointer">Blog</span>
+          <NavLink to="/blog" className="cursor-pointer">
+            Blog
+          </NavLink>
         </div>
 
         <NavLink to="/contact" className="uppercase lg:block hidden">
