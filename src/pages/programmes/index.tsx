@@ -1,41 +1,104 @@
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
 import DefaultHero from '../../components/defaults/DefaultHero';
 import Footer from '../../components/defaults/Footer';
 import Newsletter from '../../components/home/Newsletter';
-import { CertificateTag, DiplomaTag, SearchIcon } from '../../components/Icons';
+import {
+  CertificateTag,
+  DiplomaTag,
+  FilterIcon,
+  SearchIcon,
+} from '../../components/Icons';
+
+type Course = {
+  id: number;
+  title: string;
+  backgroundImg: string;
+  type: 'certificate' | 'diploma';
+  duration: '1-3' | '4-6' | '7-12' | '>12';
+  keywords: string[];
+};
 
 const Programmes = () => {
-  const courseItems = [
+  const courseItems: Course[] = [
     {
       id: 1,
       title: 'Introduction to Islam',
       backgroundImg: '/assets/course-imgs/img-one.jpg',
-      tag: <CertificateTag />,
+      type: 'certificate',
+      duration: '1-3',
+      keywords: ['islam', 'theology'],
     },
     {
       id: 2,
-      title: 'Islamic history',
+      title: 'Islamic History',
       backgroundImg: '/assets/course-imgs/img-two.jpg',
-      tag: <DiplomaTag />,
+      type: 'diploma',
+      duration: '7-12',
+      keywords: ['history', 'islam'],
     },
     {
       id: 3,
-      title: 'Islamic theology',
+      title: 'Islamic Theology',
       backgroundImg: '/assets/course-imgs/img-three.jpg',
-      tag: <DiplomaTag />,
+      type: 'diploma',
+      duration: '4-6',
+      keywords: ['theology', 'islam'],
     },
     {
       id: 4,
-      title: 'Christian - Muslim relations',
+      title: 'Christian - Muslim Relations',
       backgroundImg: '/assets/course-imgs/img-four.jpg',
-      tag: <CertificateTag />,
+      type: 'certificate',
+      duration: '4-6',
+      keywords: ['christian-muslim', 'history'],
     },
     {
       id: 5,
-      title: 'Quran arabic basic',
+      title: 'Quran Arabic (Basic)',
       backgroundImg: '/assets/course-imgs/img-five.jpg',
-      tag: <CertificateTag />,
+      type: 'certificate',
+      duration: '1-3',
+      keywords: ['arabic', 'quran'],
     },
   ];
+
+  const [search, setSearch] = useState('');
+  const [types, setTypes] = useState<string[]>([]);
+  const [durations, setDurations] = useState<string[]>([]);
+  const [keywords, setKeywords] = useState<string[]>([]);
+  const [showFilters, setShowFilters] = useState(false);
+
+  const toggleValue = (
+    value: string,
+    state: string[],
+    setState: (v: string[]) => void
+  ) => {
+    setState(
+      state.includes(value)
+        ? state.filter((v) => v !== value)
+        : [...state, value]
+    );
+  };
+
+  const filteredCourses = courseItems.filter((course) => {
+    const matchesSearch = course.title
+      .toLowerCase()
+      .includes(search.toLowerCase());
+
+    const matchesType = types.length === 0 || types.includes(course.type);
+
+    const matchesDuration =
+      durations.length === 0 || durations.includes(course.duration);
+
+    const matchesKeywords =
+      keywords.length === 0 ||
+      keywords.some((k) => course.keywords.includes(k));
+
+    return matchesSearch && matchesType && matchesDuration && matchesKeywords;
+  });
+
   return (
     <div>
       <DefaultHero
@@ -43,124 +106,156 @@ const Programmes = () => {
         img="/assets/hero-imgs/programme-hero.png"
       />
 
-      <div className="my-30 w-[90vw] mx-auto flex justify-between space-x-10">
-        <div className="w-[25%] bg-gray-100 border border-[#EAECF0] rounded-lg px-4 py-10">
-          <div className="flex flex-col space-y-3">
-            <h2 className="text-[14px] text-[#344054]">Search</h2>
-            <div className="bg-[#ffffff] p-3 rounded-lg flex items-center space-x-3">
-              <SearchIcon />
-              <input type="text" className="bg-transparent outline-none" />
-            </div>
-          </div>
-
-          <div className="flex flex-col space-y-3 mt-10">
-            <h2 className="text-[14px] text-[#344054]">Filter by</h2>
-            <h2 className="text-[20px] font-semibold text-[#101828]">
-              Programme type
-            </h2>
-            <div className="flex flex-col space-y-3 mt-2">
-              <div className="rounded-lg flex items-center space-x-3">
-                <input type="checkbox" className="w-4 h-4" />
-                <span className="text-[#344054] text-[14px]">Certificate</span>
-              </div>
-              <div className="rounded-lg flex items-center space-x-3">
-                <input type="checkbox" className="w-4 h-4" />
-                <span className="text-[#344054] text-[14px]">Diploma</span>
+      <div className="lg:my-30 my-20 w-[90vw] mx-auto flex lg:flex-row flex-col lg:space-x-10">
+        <div className="lg:w-[25%]">
+          <div className="bg-gray-100 border border-[#EAECF0] rounded-lg px-4 py-6">
+            <div className="flex flex-col space-y-3">
+              <h2 className="text-[14px] text-[#344054]">Search</h2>
+              <div className="flex space-x-4">
+                <div className="flex items-center space-x-3 w-full bg-white p-3 rounded-lg">
+                  <SearchIcon />
+                  <input
+                    type="text"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    className="bg-transparent outline-none w-full"
+                  />
+                </div>
+                <button
+                  onClick={() => setShowFilters((p) => !p)}
+                  className="border border-[#ccc] p-2 rounded-lg lg:hidden"
+                >
+                  <FilterIcon />
+                </button>
               </div>
             </div>
 
-            <div className="mt-6">
-              <h2 className="text-[20px] font-semibold text-[#101828]">
-                Programme duration
-              </h2>
-              <div className="flex flex-col space-y-3 mt-2">
-                <div className="rounded-lg flex items-center space-x-3">
-                  <input type="checkbox" className="w-4 h-4" />
-                  <span className="text-[#344054] text-[14px]">1-3 months</span>
-                </div>
-                <div className="rounded-lg flex items-center space-x-3">
-                  <input type="checkbox" className="w-4 h-4" />
-                  <span className="text-[#344054] text-[14px]">4-6 months</span>
-                </div>
-                <div className="rounded-lg flex items-center space-x-3">
-                  <input type="checkbox" className="w-4 h-4" />
-                  <span className="text-[#344054] text-[14px]">
-                    7-12 months
-                  </span>
-                </div>
-                <div className="rounded-lg flex items-center space-x-3">
-                  <input type="checkbox" className="w-4 h-4" />
-                  <span className="text-[#344054] text-[14px]">
-                    {'>'}1 year
-                  </span>
-                </div>
-              </div>
-            </div>
+            <AnimatePresence>
+              {(showFilters || window.innerWidth >= 1024) && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
+                >
+                  <div className="mt-8">
+                    <h2 className="font-semibold text-[#101828]">
+                      Programme type
+                    </h2>
+                    <div className="mt-3 space-y-2">
+                      {['certificate', 'diploma'].map((t) => (
+                        <label
+                          key={t}
+                          className="flex items-center space-x-3 text-sm"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={types.includes(t)}
+                            onChange={() => toggleValue(t, types, setTypes)}
+                          />
+                          <span className="capitalize">{t}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
 
-            <div className="mt-6">
-              <h2 className="text-[20px] font-semibold text-[#101828]">
-                Keywords
-              </h2>
-              <div className="flex flex-col space-y-3 mt-2">
-                <div className="rounded-lg flex items-center space-x-3">
-                  <input type="checkbox" className="w-4 h-4" />
-                  <span className="text-[#344054] text-[14px]">Arabic</span>
-                </div>
-                <div className="rounded-lg flex items-center space-x-3">
-                  <input type="checkbox" className="w-4 h-4" />
-                  <span className="text-[#344054] text-[14px]">Islam</span>
-                </div>
-                <div className="rounded-lg flex items-center space-x-3">
-                  <input type="checkbox" className="w-4 h-4" />
-                  <span className="text-[#344054] text-[14px]">History</span>
-                </div>
-                <div className="rounded-lg flex items-center space-x-3">
-                  <input type="checkbox" className="w-4 h-4" />
-                  <span className="text-[#344054] text-[14px]">Theology</span>
-                </div>
-                <div className="rounded-lg flex items-center space-x-3">
-                  <input type="checkbox" className="w-4 h-4" />
-                  <span className="text-[#344054] text-[14px]">
-                    Christian-Muslim relation
-                  </span>
-                </div>
-                <div className="rounded-lg flex items-center space-x-3">
-                  <input type="checkbox" className="w-4 h-4" />
-                  <span className="text-[#344054] text-[14px]">
-                    Islamic history
-                  </span>
-                </div>
-                <div className="rounded-lg flex items-center space-x-3">
-                  <input type="checkbox" className="w-4 h-4" />
-                  <span className="text-[#344054] text-[14px]">Quran</span>
-                </div>
-              </div>
-            </div>
+                  <div className="mt-6">
+                    <h2 className="font-semibold text-[#101828]">
+                      Programme duration
+                    </h2>
+                    <div className="mt-3 space-y-2">
+                      {['1-3', '4-6', '7-12', '>12'].map((d) => (
+                        <label
+                          key={d}
+                          className="flex items-center space-x-3 text-sm"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={durations.includes(d)}
+                            onChange={() =>
+                              toggleValue(d, durations, setDurations)
+                            }
+                          />
+                          <span>{d === '>12' ? '>1 year' : `${d} months`}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-6">
+                    <h2 className="font-semibold text-[#101828]">Keywords</h2>
+                    <div className="mt-3 space-y-2">
+                      {[
+                        'arabic',
+                        'islam',
+                        'history',
+                        'theology',
+                        'christian-muslim',
+                        'quran',
+                      ].map((k) => (
+                        <label
+                          key={k}
+                          className="flex items-center space-x-3 text-sm"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={keywords.includes(k)}
+                            onChange={() =>
+                              toggleValue(k, keywords, setKeywords)
+                            }
+                          />
+                          <span className="capitalize">
+                            {k.replace('-', ' ')}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
-        <div className="w-[60%]">
-          <h2 className="font-semibold">
+
+        <div className="lg:w-[60%] mt-10 lg:mt-0">
+          <h2 className="font-semibold mb-10">
             Explore our range of educational and interfaith courses
           </h2>
-          <div className="mt-10 grid grid-cols-2 gap-10">
-            {courseItems.map((course) => (
-              <div
-                key={course.id}
-                className="course-card bg-white rounded-b-2xl shadow-lg"
-              >
-                <div
-                  className="h-55 bg-cover bg-center flex items-end justify-end"
-                  style={{ backgroundImage: `url(${course.backgroundImg})` }}
-                >
-                  <div className="p-4">{course.tag}</div>
-                </div>
 
-                <h3 className="text-[20px] text-[#101B28] p-4">
-                  {course.title}
-                </h3>
-              </div>
-            ))}
-          </div>
+          <motion.div layout className="grid lg:grid-cols-2 gap-10">
+            <AnimatePresence>
+              {filteredCourses.map((course) => (
+                <motion.div
+                  layout
+                  key={course.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.25 }}
+                  className="bg-white rounded-b-2xl shadow-lg"
+                >
+                  <div
+                    className="h-55 bg-cover bg-center flex items-end justify-end"
+                    style={{
+                      backgroundImage: `url(${course.backgroundImg})`,
+                    }}
+                  >
+                    <div className="p-4">
+                      {course.type === 'certificate' ? (
+                        <CertificateTag />
+                      ) : (
+                        <DiplomaTag />
+                      )}
+                    </div>
+                  </div>
+                  <h3 className="text-[20px] text-[#101B28] p-4">
+                    {course.title}
+                  </h3>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         </div>
       </div>
 
