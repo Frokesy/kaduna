@@ -6,6 +6,7 @@ import BoardOfTrustees from './pages/about/b.o.t';
 import Staff from './pages/about/staff';
 import Contact from './pages/contact';
 import Videos from './pages/media/videos';
+import Programmes from './pages/programmes';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -15,6 +16,7 @@ const App = () => {
     { path: '/about/staff', element: <Staff /> },
     { path: '/contact', element: <Contact /> },
     { path: '/media/videos', element: <Videos /> },
+    { path: '/programmes', element: <Programmes /> },
   ]);
 
   return (

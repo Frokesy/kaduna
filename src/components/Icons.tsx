@@ -725,3 +725,34 @@ export const FooterLogo = () => (
     </defs>
   </svg>
 );
+
+export const SearchIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_560_1083)">
+      <path
+        d="M14.5835 14.5833L18.3335 18.3333"
+        stroke="#667085"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.6665 9.16669C16.6665 5.02455 13.3086 1.66669 9.1665 1.66669C5.02437 1.66669 1.6665 5.02455 1.6665 9.16669C1.6665 13.3088 5.02437 16.6667 9.1665 16.6667C13.3086 16.6667 16.6665 13.3088 16.6665 9.16669Z"
+        stroke="#667085"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_560_1083">
+        <rect width="20" height="20" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);

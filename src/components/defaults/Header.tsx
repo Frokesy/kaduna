@@ -42,7 +42,9 @@ const Header = ({ color }: { color?: string }) => {
               )}
             </AnimatePresence>
           </div>
-          <span className="cursor-pointer">Programmes</span>
+          <NavLink to="/programmes" className="cursor-pointer">
+            Programmes
+          </NavLink>
           <div className="relative">
             <div
               onMouseEnter={() => setShowMediaDropdown(true)}
