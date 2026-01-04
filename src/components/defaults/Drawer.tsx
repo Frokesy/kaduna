@@ -31,7 +31,7 @@ const Drawer = () => {
           {showAboutDropdown && <AboutDropdown />}
         </AnimatePresence>
       </div>
-      <NavLink to="#">Programmes</NavLink>
+      <NavLink to="/programmes">Programmes</NavLink>
       <div className="">
         <div
           onClick={() => setShowMediaDropdown((prev) => !prev)}

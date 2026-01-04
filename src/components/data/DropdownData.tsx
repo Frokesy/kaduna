@@ -29,7 +29,7 @@ export const mediaDropdown = [
     id: 1,
     title: 'News',
     excerpt: 'The latest industry news, updates, and info',
-    link: '#',
+    link: '/media/news',
     icon: <MissionIcon />,
   },
   {

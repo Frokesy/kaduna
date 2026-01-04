@@ -805,3 +805,23 @@ export const FilterIcon = () => (
     />
   </svg>
 );
+
+export const TimerIcon = () => (
+  <svg
+    width="12"
+    height="12"
+    viewBox="0 0 12 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_560_2553)">
+      <circle cx="6" cy="6" r="5" stroke="white" strokeWidth="1.5" />
+      <path d="M6 3.5V6L7.25 7.25" stroke="white" strokeWidth="1.5" />
+    </g>
+    <defs>
+      <clipPath id="clip0_560_2553">
+        <rect width="12" height="12" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
