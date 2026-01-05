@@ -10,7 +10,7 @@ const Drawer = () => {
   const [showMediaDropdown, setShowMediaDropdown] = useState<boolean>(false);
 
   return (
-    <div className="text-gray-800 bg-[#ffffff] min-h-screen z-40 space-y-10 flex-col flex lg:hidden w-full py-20 top-0 fixed px-4 mx-auto">
+    <div className="text-gray-800 bg-[#ffffff] min-h-[90vh] mt-[10vh] z-40 space-y-10 flex-col flex lg:hidden w-full py-20 top-0 fixed px-4 mx-auto">
       <NavLink to="/">Home</NavLink>
       <div className="">
         <div
