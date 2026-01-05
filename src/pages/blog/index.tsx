@@ -58,8 +58,6 @@ const Blog = () => {
     { id: 3, title: 'KCSCMR holds their 2017 graduation ceremony' },
   ];
 
-  /* ---------------- FILTER + SORT ---------------- */
-
   const filteredBlogs = blogItems.filter((item) => {
     const q = searchQuery.toLowerCase();
     return (
@@ -74,8 +72,6 @@ const Blog = () => {
 
     return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
   });
-
-  /* ---------------- PAGINATION ---------------- */
 
   const totalPages = Math.ceil(sortedBlogs.length / postsPerPage);
   const startIndex = (currentPage - 1) * postsPerPage;
@@ -197,7 +193,6 @@ const Blog = () => {
           </motion.div>
         </div>
 
-        {/* EDITORS PICKS */}
         <div className="lg:w-[30%] mt-20 lg:mt-0">
           <h2 className="text-[20px] font-semibold">Editor's picks</h2>
           <div className="mt-6 bg-gray-100 border border-gray-200">
@@ -213,7 +208,6 @@ const Blog = () => {
         </div>
       </div>
 
-      {/* PAGINATION */}
       <div className="flex justify-between items-center w-[90vw] mx-auto mt-20 mb-30">
         <button
           disabled={currentPage === 1}

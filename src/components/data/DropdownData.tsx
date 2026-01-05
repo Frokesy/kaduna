@@ -43,7 +43,7 @@ export const mediaDropdown = [
     id: 3,
     title: 'Gallery',
     excerpt: 'Get up and running on new features and techniques',
-    link: '#',
+    link: '/media/gallery',
     icon: <BotIcon />,
   },
 ];

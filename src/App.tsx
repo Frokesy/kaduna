@@ -9,6 +9,7 @@ import Videos from './pages/media/videos';
 import Programmes from './pages/programmes';
 import News from './pages/media/news';
 import Blog from './pages/blog';
+import Gallery from './pages/media/gallery';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -19,6 +20,7 @@ const App = () => {
     { path: '/contact', element: <Contact /> },
     { path: '/media/videos', element: <Videos /> },
     { path: '/media/news', element: <News /> },
+    { path: '/media/gallery', element: <Gallery /> },
     { path: '/programmes', element: <Programmes /> },
     { path: '/blog', element: <Blog /> },
   ]);
