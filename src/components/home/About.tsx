@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import { ArrowRightIcon, MissionIcon } from '../Icons';
 
 const About = () => {
@@ -42,10 +43,13 @@ const About = () => {
             </p>
           </div>
           <div className="flex lg:justify-end justify-center lg:mb-0 mb-10 mt-4">
-            <button className="flex items-center space-x-3 border border-[#ccc] text-[#214832] px-6 py-2 rounded-md transition">
+            <NavLink
+              to="/about"
+              className="flex items-center space-x-3 border border-[#ccc] text-[#214832] px-6 py-2 rounded-md transition"
+            >
               <span>Learn More</span>
               <ArrowRightIcon />
-            </button>
+            </NavLink>
           </div>
         </div>
         <div className="lg:w-[50%]">

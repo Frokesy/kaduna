@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { CalendarIcon } from '../Icons';
+import { NavLink } from 'react-router-dom';
 
 const Blog = () => {
   const [activeTab, setActiveTab] = useState('News');
@@ -57,9 +58,12 @@ const Blog = () => {
           <div className="flex flex-col space-y-2">
             <div className="flex items-center justify-between">
               <p className="text-[#214832] text-[16px] font-semibold">News</p>
-              <button className="bg-[#2B5D40] text-[#ffffff] px-6 py-3 font-semibold rounded-lg">
+              <NavLink
+                to="/blog"
+                className="bg-[#2B5D40] text-[#ffffff] px-6 py-3 font-semibold rounded-lg"
+              >
                 View all posts
-              </button>
+              </NavLink>
             </div>
             <h2 className="lg:text-[38px] text-[30px] text-[#101B28] lg:-mt-4 font-semibold">
               Latest news

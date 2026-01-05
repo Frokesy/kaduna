@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { CertificateTag, DiplomaTag } from '../Icons';
+import { NavLink } from 'react-router-dom';
 
 const Courses = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -123,7 +124,7 @@ const Courses = () => {
       </div>
 
       <div className="flex justify-end w-[90vw] mx-auto mt-6">
-        <button>View all courses</button>
+        <NavLink to="/programmes">View all courses</NavLink>
       </div>
     </div>
   );

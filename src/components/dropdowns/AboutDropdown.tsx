@@ -9,7 +9,7 @@ const AboutDropdown = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.2 }}
-      className="lg:absolute text-gray-800 bg-[#ffffff] z-50 lg:rounded-xl lg:shadow-lg flex flex-col p-2 space-y-2 lg:w-[20vw] w-full lg:top-10"
+      className="lg:absolute text-gray-800 bg-[#ffffff] z-50 lg:rounded-xl lg:shadow-lg flex flex-col p-2 space-y-2 lg:w-[20vw] w-full lg:top-8"
     >
       {aboutDropdown.map((item) => (
         <NavLink
