@@ -1,3 +1,4 @@
+import Container from '../../components/defaults/Container';
 import Footer from '../../components/defaults/Footer';
 import Header from '../../components/defaults/Header';
 import Newsletter from '../../components/home/Newsletter';
@@ -9,7 +10,7 @@ import {
 
 const Contact = () => {
   return (
-    <div>
+    <Container>
       <Header color="black" />
 
       <div className="flex lg:flex-row flex-col justify-between items-center my-[10vh]">
@@ -143,7 +144,7 @@ const Contact = () => {
 
       <Newsletter />
       <Footer />
-    </div>
+    </Container>
   );
 };
 

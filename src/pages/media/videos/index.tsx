@@ -3,6 +3,7 @@ import DefaultHero from '../../../components/defaults/DefaultHero';
 import { videoItems } from '../../../components/data';
 import Newsletter from '../../../components/home/Newsletter';
 import Footer from '../../../components/defaults/Footer';
+import Container from '../../../components/defaults/Container';
 
 const Videos = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -45,7 +46,7 @@ const Videos = () => {
   };
 
   return (
-    <div>
+    <Container>
       <DefaultHero title="Videos" img="/assets/hero-imgs/img-five.png" />
 
       <div className="lg:my-[15vh] my-20 w-[90vw] mx-auto">
@@ -122,7 +123,7 @@ const Videos = () => {
 
       <Newsletter />
       <Footer />
-    </div>
+    </Container>
   );
 };
 

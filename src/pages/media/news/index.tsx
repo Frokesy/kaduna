@@ -3,6 +3,7 @@ import DefaultHero from '../../../components/defaults/DefaultHero';
 import Footer from '../../../components/defaults/Footer';
 import Newsletter from '../../../components/home/Newsletter';
 import { TimerIcon } from '../../../components/Icons';
+import Container from '../../../components/defaults/Container';
 
 const News = () => {
   const newsItems = [
@@ -81,7 +82,7 @@ const News = () => {
   };
 
   return (
-    <div>
+    <Container>
       <DefaultHero title="News" img="/assets/hero-imgs/news-hero.png" />
 
       <div className="lg:my-[15vh] my-20 flex lg:flex-row flex-col justify-between lg:space-x-10 w-[90vw] mx-auto">
@@ -189,7 +190,7 @@ const News = () => {
 
       <Newsletter />
       <Footer />
-    </div>
+    </Container>
   );
 };
 

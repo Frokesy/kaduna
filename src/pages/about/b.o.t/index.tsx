@@ -1,4 +1,5 @@
 import { boardOfTrustees } from '../../../components/data';
+import Container from '../../../components/defaults/Container';
 import DefaultHero from '../../../components/defaults/DefaultHero';
 import Footer from '../../../components/defaults/Footer';
 import Newsletter from '../../../components/home/Newsletter';
@@ -6,7 +7,7 @@ import { BotIcon } from '../../../components/Icons';
 
 const BoardOfTrustees = () => {
   return (
-    <div>
+    <Container>
       <DefaultHero
         title="Board of Trustees"
         img="/assets/hero-imgs/img-four.png"
@@ -49,7 +50,7 @@ const BoardOfTrustees = () => {
       </div>
       <Newsletter />
       <Footer />
-    </div>
+    </Container>
   );
 };
 

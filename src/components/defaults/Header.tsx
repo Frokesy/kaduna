@@ -38,6 +38,7 @@ const Header = ({ color }: { color?: string }) => {
           sticky: {
             backgroundColor: 'rgba(0,0,0,0.75)',
             backdropFilter: 'blur(10px)',
+            color: '#ffffff',
             boxShadow: '0 10px 30px rgba(0,0,0,0.35)',
             y: [-20, 0],
           },
@@ -50,7 +51,7 @@ const Header = ({ color }: { color?: string }) => {
           scrolled ? 'fixed top-0 left-0' : 'relative'
         }`}
       >
-        <div className="flex justify-between items-center w-[90vw] mx-auto py-4 text-white">
+        <div className="flex justify-between items-center w-[90vw] mx-auto py-4">
           <NavLink to="/" className="lg:hidden block">
             <img src="/assets/logo.svg" alt="logo" />
           </NavLink>

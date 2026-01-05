@@ -3,6 +3,7 @@ import { motion, AnimatePresence, type Variants, easeOut } from 'framer-motion';
 import DefaultHero from '../../../components/defaults/DefaultHero';
 import Newsletter from '../../../components/home/Newsletter';
 import Footer from '../../../components/defaults/Footer';
+import Container from '../../../components/defaults/Container';
 
 type GalleryKey = 'cms' | 'psp' | 'vpc';
 
@@ -135,7 +136,7 @@ const Gallery = () => {
   );
 
   return (
-    <div>
+    <Container>
       <DefaultHero
         title="Photo Gallery"
         img="/assets/hero-imgs/gallery-hero.png"
@@ -201,7 +202,7 @@ const Gallery = () => {
 
       <Newsletter />
       <Footer />
-    </div>
+    </Container>
   );
 };
 

@@ -8,12 +8,13 @@ import {
 import { aboutItems, aboutPrinciples, qa } from '../../components/data';
 import Newsletter from '../../components/home/Newsletter';
 import Footer from '../../components/defaults/Footer';
+import Container from '../../components/defaults/Container';
 
 const About = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <div>
+    <Container>
       <DefaultHero title="About Us" img="/assets/hero-imgs/img-four.png" />
       <div className="flex lg:flex-row flex-col-reverse justify-between items-center bg-[#2F6646]">
         <div className="lg:w-[45%] text-[#ffffff] lg:mx-20 mx-6 lg:py-0 py-10">
@@ -169,7 +170,7 @@ const About = () => {
       </div>
       <Newsletter />
       <Footer />
-    </div>
+    </Container>
   );
 };
 

@@ -1,3 +1,4 @@
+import Container from '../../components/defaults/Container';
 import Footer from '../../components/defaults/Footer';
 import About from '../../components/home/About';
 import Blog from '../../components/home/Blog';
@@ -9,7 +10,7 @@ import Partners from '../../components/home/Partners';
 
 const Home = () => {
   return (
-    <div>
+    <Container>
       <Hero />
       <About />
       <Donate />
@@ -18,7 +19,7 @@ const Home = () => {
       <Partners />
       <Newsletter />
       <Footer />
-    </div>
+    </Container>
   );
 };
 

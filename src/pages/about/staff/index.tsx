@@ -1,4 +1,5 @@
 import { staff } from '../../../components/data';
+import Container from '../../../components/defaults/Container';
 import DefaultHero from '../../../components/defaults/DefaultHero';
 import Footer from '../../../components/defaults/Footer';
 import Newsletter from '../../../components/home/Newsletter';
@@ -6,7 +7,7 @@ import { BotIcon } from '../../../components/Icons';
 
 const Staff = () => {
   return (
-    <div>
+    <Container>
       <DefaultHero title="Staff" img="/assets/hero-imgs/img-four.png" />
       <div className="bg-[#05130b] text-[#ffffff] lg:py-30 py-10">
         <div className="w-[90vw] mx-auto flex lg:flex-row flex-col justify-between">
@@ -46,7 +47,7 @@ const Staff = () => {
       </div>
       <Newsletter />
       <Footer />
-    </div>
+    </Container>
   );
 };
 

@@ -5,6 +5,7 @@ import DefaultHero from '../../components/defaults/DefaultHero';
 import Footer from '../../components/defaults/Footer';
 import Newsletter from '../../components/home/Newsletter';
 import { SearchIcon, TimerIcon } from '../../components/Icons';
+import Container from '../../components/defaults/Container';
 
 type BlogItem = {
   id: number;
@@ -109,7 +110,7 @@ const Blog = () => {
   };
 
   return (
-    <div>
+    <Container>
       <DefaultHero title="Blog" img="/assets/hero-imgs/blog-hero.png" />
 
       <div className="flex lg:flex-row flex-col justify-between w-[90vw] mx-auto lg:mt-[10vh] mt-20 gap-6">
@@ -250,7 +251,7 @@ const Blog = () => {
 
       <Newsletter />
       <Footer />
-    </div>
+    </Container>
   );
 };
 

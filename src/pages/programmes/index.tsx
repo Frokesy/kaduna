@@ -10,6 +10,7 @@ import {
   FilterIcon,
   SearchIcon,
 } from '../../components/Icons';
+import Container from '../../components/defaults/Container';
 
 type Course = {
   id: number;
@@ -100,7 +101,7 @@ const Programmes = () => {
   });
 
   return (
-    <div>
+    <Container>
       <DefaultHero
         title="Programmes"
         img="/assets/hero-imgs/programme-hero.png"
@@ -261,7 +262,7 @@ const Programmes = () => {
 
       <Newsletter />
       <Footer />
-    </div>
+    </Container>
   );
 };
 
