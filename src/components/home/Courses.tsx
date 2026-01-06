@@ -29,9 +29,19 @@ const Courses = () => {
     },
     {
       id: 4,
-      title: 'Islamic theology',
-      backgroundImg: '/assets/course-imgs/img-three.jpg',
-      tag: <DiplomaTag />,
+      title: 'Christian - Muslim Relations',
+      backgroundImg: '/assets/course-imgs/img-four.jpg',
+      type: 'certificate',
+      duration: '4-6',
+      keywords: ['christian-muslim', 'history'],
+    },
+    {
+      id: 5,
+      title: 'Quran Arabic (Basic)',
+      backgroundImg: '/assets/course-imgs/img-five.jpg',
+      type: 'certificate',
+      duration: '1-3',
+      keywords: ['arabic', 'quran'],
     },
   ];
 

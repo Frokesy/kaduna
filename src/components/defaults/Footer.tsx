@@ -77,19 +77,13 @@ const Footer = () => {
 
           <div className="flex flex-col space-y-4 lg:mt-0 mt-6">
             <h2 className="font-semibold">Legal</h2>
-            <NavLink to="/terms" className="text-[14px] text-[#687D85]">
+            <NavLink to="#" className="text-[14px] text-[#687D85]">
               Terms
             </NavLink>
-            <NavLink
-              to="/privacy-policy"
-              className="text-[14px] text-[#687D85]"
-            >
+            <NavLink to="#" className="text-[14px] text-[#687D85]">
               Privacy Policy
             </NavLink>
-            <NavLink
-              to="/cookies-policy"
-              className="text-[14px] text-[#687D85]"
-            >
+            <NavLink to="#" className="text-[14px] text-[#687D85]">
               Cookies Policy
             </NavLink>
           </div>

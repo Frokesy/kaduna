@@ -11,11 +11,9 @@ const About = () => {
           2004.
         </h2>
         <p className="text-[#344054] lg:text-[20px]">
-          "We are actively committed to offering impactful enlightenment
-          programs and courses for both Christians and Muslims. These
-          initiatives foster deeper understanding of Islam and promote
-          interfaith cooperation, helping to build a peaceful and harmonious
-          society—essential for holistic development across all sectors."
+          We take our mission of increasing access to quality religious
+          education seriously. We offer Educational and Enlightenment Workshops
+          and Seminars on Christian-Muslim Relations.
         </p>
       </div>
 
@@ -27,9 +25,12 @@ const About = () => {
           </div>
           <div className="lg:pl-20">
             <p className="text-[#344054] text-[16px]">
-              Our ultimate goal is to create a critical mass of young men and
-              women who understand their religious teachings and of their
-              neighbors.
+              We have been effectively engaged in running Enlightenment Programs
+              and Courses for Christian and Muslim faithfuls as would foster
+              better knowledge and understanding of Islam and Muslims thus
+              facilitating interfaith cooperative behaviour in an atmosphere of
+              harmony and peaceful coexistence so vital to all-round sectoral
+              development.
             </p>
             <p className="text-[#344054] text-[16px] mt-2">
               1. To Educate Nigerians on peace and peaceful co-existence.

@@ -13,7 +13,7 @@ const Contact = () => {
     <Container>
       <Header color="black" />
 
-      <div className="flex lg:flex-row flex-col justify-between items-center my-[10vh]">
+      <div className="flex lg:flex-row flex-col justify-between items-center my-10">
         <div className="lg:w-[55%] lg:px-20 w-[90%]">
           <h2 className="text-[48px] font-semibold mb-6">Contact Us</h2>
           <p className="text-[18px] mb-6">
@@ -74,7 +74,7 @@ const Contact = () => {
             </button>
           </div>
         </div>
-        <div className="lg:w-[40%]">
+        <div className="lg:w-[40%] lg:mt-0 mt-10">
           <img src="/assets/map.png" alt="map" className="w-full" />
         </div>
       </div>

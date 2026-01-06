@@ -7,8 +7,9 @@ import Container from '../../../components/defaults/Container';
 
 const Videos = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 5;
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
+  const postsPerPage = 5;
   const totalPages = Math.ceil(videoItems.length / postsPerPage);
 
   const startIndex = (currentPage - 1) * postsPerPage;
@@ -60,21 +61,30 @@ const Videos = () => {
           {currentVideos.map((item) => (
             <div
               key={item.id}
-              className="flex lg:flex-row flex-col-reverse justify-between items-center gap-6"
+              onClick={() => setActiveVideo(item.videoUrl)}
+              className="flex lg:flex-row flex-col-reverse justify-between items-center gap-6 cursor-pointer group"
             >
               <div className="lg:w-[50%]">
-                <h3 className="text-[20px] font-semibold">{item.title}</h3>
+                <h3 className="text-[20px] font-semibold group-hover:underline">
+                  {item.title}
+                </h3>
                 <p className="text-[#101828] text-[16px] mt-2">
                   {item.excerpt}
                 </p>
               </div>
 
-              <div className="lg:w-[40%]">
+              <div className="relative lg:w-[40%]">
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="w-full h-auto"
+                  className="w-full h-auto rounded-lg"
                 />
+
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="bg-black/70 h-14 w-14 flex items-center justify-center rounded-full text-white text-2xl transition-transform group-hover:scale-110">
+                    ▶
+                  </div>
+                </div>
               </div>
             </div>
           ))}
@@ -120,6 +130,33 @@ const Videos = () => {
           </button>
         </div>
       </div>
+
+      {activeVideo && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center px-4"
+          onClick={() => setActiveVideo(null)}
+        >
+          <div
+            className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setActiveVideo(null)}
+              className="absolute top-3 right-3 z-10 text-white bg-black/60 rounded-full px-3 py-1 hover:bg-black"
+            >
+              ✕
+            </button>
+
+            <iframe
+              src={activeVideo.replace('watch?v=', 'embed/')}
+              title="Video player"
+              className="w-full h-full"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
 
       <Newsletter />
       <Footer />

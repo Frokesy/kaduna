@@ -12,15 +12,15 @@ const slides = [
   },
   {
     image: '/assets/hero-imgs/img-two.png',
-    title: 'Building bridges through dialogue and mutual respect',
+    title: 'Explore our diverse range of training programmes',
     description:
-      'We foster understanding that strengthens communities and promotes peaceful coexistence.',
+      'Investing in an understanding between Muslims and Christians. Join us now to achieve the dream of positive interpersonal relations and donate to our cause.',
   },
   {
     image: '/assets/hero-imgs/img-three.png',
-    title: 'Empowering communities for sustainable peace',
+    title: 'Fostering Christian-Muslim Relations through Education',
     description:
-      'Education and collaboration are at the heart of long-lasting development.',
+      'Investing in an understanding between Muslims and Christians. Join us now to achieve the dream of positive interpersonal relations and donate to our cause.',
   },
 ];
 

@@ -26,29 +26,20 @@ const Blog = () => {
   const blogItems: BlogItem[] = [
     {
       id: 1,
-      title: 'The permanent site project - the journey so far',
+      title: 'Reflections on our common annual riituals',
       excerpt:
-        'A short documentary on the permanent site construction project of the Kaduna Centre for the Study of Christian-Muslim Relations.',
-      imageUrl: '/assets/blog-img-one.png',
-      date: '15 Nov, 2023',
+        'In this year alone, Nigerians – Christians and Muslims - have shared three religious rituals together. The word rituals is used sociologically, to mean – the expression of religious beliefs',
+      imageUrl: '/assets/blog-imgs/img-one.jpg',
+      date: '20 Jan, 2025',
       author: 'Admin',
     },
     {
       id: 2,
-      title: 'Bishop Fearon named to head Kaduna peace commission',
+      title: 'Peace beyond 2011',
       excerpt:
-        'An Anglican cleric, Josiah Idowu-Fearon, is to head the Kaduna State Peace Commission.',
-      imageUrl: '/assets/hero-imgs/img-three.png',
-      date: '15 Nov, 2022',
-      author: 'Admin',
-    },
-    {
-      id: 3,
-      title: 'KCSCMR holds their 2017 graduation ceremony',
-      excerpt:
-        'The Kaduna Centre for the Study of Christian-Muslim Relations today held their graduation ceremony.',
-      imageUrl: '/assets/blog-img-three.png',
-      date: '10 Jan, 2017',
+        'As Nigerians go to the polls from Saturday the 2nd of April, it is necessary to give a thought to the need for Nigeria to survive and play her vital and influential roles with the other leading...',
+      imageUrl: '/assets/blog-imgs/img-two.jpg',
+      date: '20 Jan, 2025',
       author: 'Admin',
     },
   ];

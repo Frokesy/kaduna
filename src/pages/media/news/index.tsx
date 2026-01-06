@@ -20,18 +20,18 @@ const News = () => {
       id: 2,
       title: 'Bishop Fearon named to head Kaduna peace commission',
       excerpt:
-        'An Anglican cleric, Josiah Idowu-Fearon, is to head the Kaduna State Peace Commission.',
+        'An Anglican cleric, Josiah Idowu-Fearon, is to head the Kaduna State Peace Commission. The nomination of the former Archbishop of Kaduna was announced on Thursday in Kadun',
       imageUrl: '/assets/hero-imgs/img-three.png',
-      date: '15 Nov, 2023',
+      date: '17 Sep, 2017',
       author: 'Admin',
     },
     {
       id: 3,
       title: 'KCSCMR holds their 2017 graduation ceremony',
       excerpt:
-        'The Kaduna Centre for the Study of Christian-Muslim Relations, today hold their graduation ceremony.',
+        'The Kaduna Centre for the Study of Christian-Muslim Relations, today hold their graduation ceremony. It was reported that the Kadunna centre was founded by Rev. Dr. Josiah Idowu Fearon, former Bishop...',
       imageUrl: '/assets/blog-img-three.png',
-      date: '15 Nov, 2023',
+      date: '08 Apr, 2017',
       author: 'Admin',
     },
   ];

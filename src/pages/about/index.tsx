@@ -1,10 +1,6 @@
 import { useState } from 'react';
 import DefaultHero from '../../components/defaults/DefaultHero';
-import {
-  ArrowRightIcon,
-  CaretDownIcon,
-  MissionIcon,
-} from '../../components/Icons';
+import { CaretDownIcon, MissionIcon } from '../../components/Icons';
 import { aboutItems, aboutPrinciples, qa } from '../../components/data';
 import Newsletter from '../../components/home/Newsletter';
 import Footer from '../../components/defaults/Footer';
@@ -73,13 +69,6 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="flex  justify-center lg:mb-0 mb-10 mt-10">
-          <button className="flex items-center space-x-3 bg-[#ffffff] text-[#214832] text-[18px] font-semibold px-10 py-3 rounded-md transition">
-            <span>Learn More</span>
-            <ArrowRightIcon />
-          </button>
         </div>
       </div>
 
