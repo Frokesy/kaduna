@@ -11,6 +11,7 @@ import News from './pages/media/news';
 import Blog from './pages/blog';
 import Gallery from './pages/media/gallery';
 import QuranArabic from './pages/courses/quran-arabic';
+import IslamicHistory from './pages/courses/islamic-history';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -27,6 +28,7 @@ const App = () => {
 
     // courses
     { path: '/courses/quran-arabic', element: <QuranArabic /> },
+    { path: '/courses/islamic-history', element: <IslamicHistory /> },
   ]);
 
   return (
