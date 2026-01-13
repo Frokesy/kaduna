@@ -16,6 +16,7 @@ import IslamicTheology from './pages/courses/islamic-theology';
 import ChristianMuslimRelations from './pages/courses/christian-muslim-relations';
 import IntroToIslam from './pages/courses/intro-to-islam';
 import PostOne from './pages/blog/post-one';
+import PostTwo from './pages/blog/post-two';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -45,6 +46,7 @@ const App = () => {
 
     // blog posts
     { path: '/blog/1', element: <PostOne /> },
+    { path: '/blog/2', element: <PostTwo /> },
   ]);
 
   return (
