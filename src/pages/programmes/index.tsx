@@ -11,6 +11,7 @@ import {
   SearchIcon,
 } from '../../components/Icons';
 import Container from '../../components/defaults/Container';
+import { NavLink } from 'react-router-dom';
 
 type Course = {
   id: number;
@@ -19,6 +20,7 @@ type Course = {
   type: 'certificate' | 'diploma';
   duration: '1-3' | '4-6' | '7-12' | '>12';
   keywords: string[];
+  url: string;
 };
 
 const Programmes = () => {
@@ -30,6 +32,7 @@ const Programmes = () => {
       type: 'certificate',
       duration: '1-3',
       keywords: ['islam', 'theology'],
+      url: '/courses/introduction-to-islam',
     },
     {
       id: 2,
@@ -38,6 +41,7 @@ const Programmes = () => {
       type: 'diploma',
       duration: '7-12',
       keywords: ['history', 'islam'],
+      url: '/courses/islamic-history',
     },
     {
       id: 3,
@@ -46,6 +50,7 @@ const Programmes = () => {
       type: 'diploma',
       duration: '4-6',
       keywords: ['theology', 'islam'],
+      url: '/courses/islamic-theology',
     },
     {
       id: 4,
@@ -54,6 +59,7 @@ const Programmes = () => {
       type: 'certificate',
       duration: '4-6',
       keywords: ['christian-muslim', 'history'],
+      url: '/courses/christian-muslim-relations',
     },
     {
       id: 5,
@@ -62,6 +68,7 @@ const Programmes = () => {
       type: 'certificate',
       duration: '1-3',
       keywords: ['arabic', 'quran'],
+      url: '/courses/quran-arabic',
     },
   ];
 
@@ -250,9 +257,11 @@ const Programmes = () => {
                       )}
                     </div>
                   </div>
-                  <h3 className="text-[20px] text-[#101B28] p-4">
-                    {course.title}
-                  </h3>
+                  <NavLink to={course.url}>
+                    <h3 className="text-[20px] text-[#101B28] p-4">
+                      {course.title}
+                    </h3>
+                  </NavLink>
                 </motion.div>
               ))}
             </AnimatePresence>
