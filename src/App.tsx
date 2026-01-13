@@ -15,6 +15,7 @@ import IslamicHistory from './pages/courses/islamic-history';
 import IslamicTheology from './pages/courses/islamic-theology';
 import ChristianMuslimRelations from './pages/courses/christian-muslim-relations';
 import IntroToIslam from './pages/courses/intro-to-islam';
+import PostOne from './pages/blog/post-one';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -41,6 +42,9 @@ const App = () => {
       path: '/courses/introduction-to-islam',
       element: <IntroToIslam />,
     },
+
+    // blog posts
+    { path: '/blog/1', element: <PostOne /> },
   ]);
 
   return (

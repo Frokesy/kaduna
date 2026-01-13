@@ -16,7 +16,7 @@ export const HamburgerIcon = ({ color }: { color?: string }) => (
   </svg>
 );
 
-export const CloseIcon = () => (
+export const CloseIcon = ({ color }: { color?: string }) => (
   <svg
     width="40"
     height="40"
@@ -26,21 +26,21 @@ export const CloseIcon = () => (
   >
     <path
       d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
-      stroke="#ffffff"
+      stroke={color || '#ffffff'}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M9.17004 14.8299L14.83 9.16992"
-      stroke="#ffffff"
+      stroke={color || '#ffffff'}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M14.83 14.8299L9.17004 9.16992"
-      stroke="#ffffff"
+      stroke={color || '#ffffff'}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"

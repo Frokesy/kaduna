@@ -72,7 +72,7 @@ const Header = ({ color }: { color?: string }) => {
                 className="flex items-center space-x-3 cursor-pointer"
               >
                 <span>About</span>
-                <CaretDownIcon />
+                <CaretDownIcon color={color} />
               </div>
 
               <AnimatePresence>
@@ -100,7 +100,7 @@ const Header = ({ color }: { color?: string }) => {
                 className="flex items-center space-x-3 cursor-pointer"
               >
                 <span>Media</span>
-                <CaretDownIcon />
+                <CaretDownIcon color={color} />
               </div>
 
               <AnimatePresence>
@@ -139,7 +139,7 @@ const Header = ({ color }: { color?: string }) => {
                   exit={{ opacity: 0, scale: 0.8 }}
                   className="fixed top-6 right-4 z-50"
                 >
-                  <CloseIcon />
+                  <CloseIcon color={color} />
                 </motion.div>
               ) : (
                 <motion.div

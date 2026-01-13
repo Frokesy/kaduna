@@ -6,6 +6,7 @@ import Footer from '../../components/defaults/Footer';
 import Newsletter from '../../components/home/Newsletter';
 import { SearchIcon, TimerIcon } from '../../components/Icons';
 import Container from '../../components/defaults/Container';
+import { NavLink } from 'react-router-dom';
 
 type BlogItem = {
   id: number;
@@ -14,6 +15,7 @@ type BlogItem = {
   imageUrl: string;
   date: string;
   author: string;
+  url: string;
 };
 
 const Blog = () => {
@@ -32,6 +34,7 @@ const Blog = () => {
       imageUrl: '/assets/blog-imgs/img-one.jpg',
       date: '20 Jan, 2025',
       author: 'Admin',
+      url: '/blog/1',
     },
     {
       id: 2,
@@ -41,6 +44,7 @@ const Blog = () => {
       imageUrl: '/assets/blog-imgs/img-two.jpg',
       date: '20 Jan, 2025',
       author: 'Admin',
+      url: '/blog/2',
     },
   ];
 
@@ -160,9 +164,11 @@ const Blog = () => {
                       <span className="text-[#475467] text-[12px]">
                         {item.date}
                       </span>
-                      <span className="text-[#214832] text-[12px]">
-                        Read more
-                      </span>
+                      <NavLink to={item.url}>
+                        <span className="text-[#214832] text-[12px]">
+                          Read more
+                        </span>
+                      </NavLink>
                     </div>
                   </div>
 
