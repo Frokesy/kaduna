@@ -10,6 +10,7 @@ import Programmes from './pages/programmes';
 import News from './pages/media/news';
 import Blog from './pages/blog';
 import Gallery from './pages/media/gallery';
+import QuranArabic from './pages/courses/quran-arabic';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -23,6 +24,9 @@ const App = () => {
     { path: '/media/gallery', element: <Gallery /> },
     { path: '/programmes', element: <Programmes /> },
     { path: '/blog', element: <Blog /> },
+
+    // courses
+    { path: '/courses/quran-arabic', element: <QuranArabic /> },
   ]);
 
   return (

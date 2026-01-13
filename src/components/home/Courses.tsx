@@ -14,18 +14,21 @@ const Courses = () => {
       title: 'Introduction to Islam',
       backgroundImg: '/assets/course-imgs/img-one.jpg',
       tag: <CertificateTag />,
+      url: '/courses/introduction-to-islam',
     },
     {
       id: 2,
       title: 'Islamic history',
       backgroundImg: '/assets/course-imgs/img-two.jpg',
       tag: <DiplomaTag />,
+      url: '/courses/islamic-history',
     },
     {
       id: 3,
       title: 'Islamic theology',
       backgroundImg: '/assets/course-imgs/img-three.jpg',
       tag: <DiplomaTag />,
+      url: '/courses/islamic-theology',
     },
     {
       id: 4,
@@ -33,6 +36,7 @@ const Courses = () => {
       backgroundImg: '/assets/course-imgs/img-four.jpg',
       type: 'certificate',
       duration: '4-6',
+      url: '/courses/christian-muslim-relations',
       keywords: ['christian-muslim', 'history'],
     },
     {
@@ -41,6 +45,7 @@ const Courses = () => {
       backgroundImg: '/assets/course-imgs/img-five.jpg',
       type: 'certificate',
       duration: '1-3',
+      url: '/courses/quran-arabic',
       keywords: ['arabic', 'quran'],
     },
   ];
@@ -106,7 +111,9 @@ const Courses = () => {
               <div className="p-4">{course.tag}</div>
             </div>
 
-            <h3 className="text-[20px] text-[#101B28] p-4">{course.title}</h3>
+            <NavLink to={course.url}>
+              <h2 className="text-[20px] text-[#101B28] p-4">{course.title}</h2>
+            </NavLink>
           </div>
         ))}
       </div>
