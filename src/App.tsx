@@ -14,6 +14,7 @@ import QuranArabic from './pages/courses/quran-arabic';
 import IslamicHistory from './pages/courses/islamic-history';
 import IslamicTheology from './pages/courses/islamic-theology';
 import ChristianMuslimRelations from './pages/courses/christian-muslim-relations';
+import IntroToIslam from './pages/courses/intro-to-islam';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const App = () => {
     {
       path: '/courses/christian-muslim-relations',
       element: <ChristianMuslimRelations />,
+    },
+    {
+      path: '/courses/introduction-to-islam',
+      element: <IntroToIslam />,
     },
   ]);
 

@@ -10,30 +10,45 @@ import Newsletter from '../../../components/home/Newsletter';
 import Footer from '../../../components/defaults/Footer';
 import Container from '../../../components/defaults/Container';
 
-const ChristianMuslimRelations = () => {
+const IntroToIslam = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const outlineItems = [
-    { id: 1, outline: 'Introduction', content: '' },
+    { id: 1, outline: 'Introduction to the study of Islam', content: '' },
     {
       id: 2,
-      outline: 'Muslim attitudes to Christ/Christians',
+      outline: 'Pre-Islamic Arabia',
       content: '',
     },
-    { id: 3, outline: 'Christian attitudes to Muslims', content: '' },
+    { id: 3, outline: 'Life of Muhammad (570 - 632)', content: '' },
     {
       id: 4,
-      outline: 'Modem Christian views of Islam - 19th Century onward',
+      outline: "The Qur'an",
       content: '',
     },
     {
       id: 5,
-      outline: 'Dialogue',
+      outline: 'Sunna and Hadith',
       content: '',
     },
     {
       id: 6,
-      outline: 'Conversions',
+      outline: 'Faith and practice of Islam',
+      content: '',
+    },
+    {
+      id: 7,
+      outline: 'Jurisprudence',
+      content: '',
+    },
+    {
+      id: 8,
+      outline: 'Different groups within Islam',
+      content: '',
+    },
+    {
+      id: 9,
+      outline: 'Group regarded as un-Islamic by orthodox Islam',
       content: '',
     },
   ];
@@ -45,10 +60,10 @@ const ChristianMuslimRelations = () => {
       <div className="bg-[#F9FAFB]">
         <div className="pt-10 lg:pb-20 pb-10 lg:w-[80vw] w-[90vw] mx-auto">
           <h2 className="lg:text-[128px] text-[48px] lg:mb-0 mb-10 font-semibold text-center">
-            Christian - Muslim Relations
+            Introduction to Islam
           </h2>
           <img
-            src="/assets/course-imgs/img-four.jpg"
+            src="/assets/course-imgs/img-one.jpg"
             alt="hero"
             className="w-full lg:h-150 h-48 lg:object-fill object-cover rounded-xl"
           />
@@ -59,11 +74,11 @@ const ChristianMuslimRelations = () => {
         <div className="flex lg:flex-row flex-col lg:space-y-0 space-y-6 justify-between lg:space-x-10 lg:mt-[15vh] mt-10">
           <div className="lg:w-[40%]">
             <h2 className="lg:text-[36px] text-[30px] font-semibold">
-              Christian - Muslim Relations
+              Introduction to Islam
             </h2>
             <p className="text-[16px] mt-4">
               This course is designed to help students develop a strong
-              foundation in Christian - Muslim Relations.
+              foundation in Islam.
             </p>
           </div>
 
@@ -161,4 +176,4 @@ const ChristianMuslimRelations = () => {
   );
 };
 
-export default ChristianMuslimRelations;
+export default IntroToIslam;
