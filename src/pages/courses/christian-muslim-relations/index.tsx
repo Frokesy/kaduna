@@ -10,46 +10,30 @@ import Newsletter from '../../../components/home/Newsletter';
 import Footer from '../../../components/defaults/Footer';
 import Container from '../../../components/defaults/Container';
 
-const IslamicTheology = () => {
+const ChristianMuslimRelations = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const outlineItems = [
-    { id: 1, outline: 'Introduction - Muhammad', content: '' },
+    { id: 1, outline: 'Introduction', content: '' },
     {
       id: 2,
-      outline: 'The Caliphate and the development of Islamic Theology',
+      outline: 'Muslim attitudes to Christ/Christians',
       content: '',
     },
-    { id: 3, outline: 'Classical schools of thought', content: '' },
+    { id: 3, outline: 'Christian attitudes to Muslims', content: '' },
     {
       id: 4,
-      outline: 'AI - Ghazali and the consolidation and systematization',
+      outline: 'Modem Christian views of Islam - 19th Century onward',
       content: '',
     },
     {
       id: 5,
-      outline: 'Ibn Taymiyya',
+      outline: 'Dialogue',
       content: '',
     },
     {
       id: 6,
-      outline: 'Basic principles of Islamic doctrine',
-      content: '',
-    },
-    {
-      id: 7,
-      outline: 'Fundamental articles of faith',
-      content: '',
-    },
-    {
-      id: 8,
-      outline: 'Pillars of faith',
-      content: '',
-    },
-    {
-      id: 9,
-      outline:
-        'Critical evaluation of theological concepts: Sin, Evil, Creation etc',
+      outline: 'Conversions',
       content: '',
     },
   ];
@@ -61,10 +45,10 @@ const IslamicTheology = () => {
       <div className="bg-[#F9FAFB]">
         <div className="pt-10 lg:pb-20 pb-10 lg:w-[80vw] w-[90vw] mx-auto">
           <h2 className="lg:text-[128px] text-[48px] lg:mb-0 mb-10 font-semibold text-center">
-            Islamic Theology
+            Christian - Muslim Relations
           </h2>
           <img
-            src="/assets/course-imgs/img-three.jpg"
+            src="/assets/course-imgs/img-four.jpg"
             alt="hero"
             className="w-full lg:h-150 h-48 object-cover rounded-xl"
           />
@@ -75,11 +59,11 @@ const IslamicTheology = () => {
         <div className="flex lg:flex-row flex-col lg:space-y-0 space-y-6 justify-between lg:space-x-10 lg:mt-[15vh] mt-10">
           <div className="lg:w-[40%]">
             <h2 className="lg:text-[36px] text-[30px] font-semibold">
-              Islamic Theology
+              Christian - Muslim Relations
             </h2>
             <p className="text-[16px] mt-4">
               This course is designed to help students develop a strong
-              foundation in Islamic Theology.
+              foundation in Christian - Muslim Relations.
             </p>
           </div>
 
@@ -177,4 +161,4 @@ const IslamicTheology = () => {
   );
 };
 
-export default IslamicTheology;
+export default ChristianMuslimRelations;

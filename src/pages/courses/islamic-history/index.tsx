@@ -8,6 +8,7 @@ import {
 } from '../../../components/Icons';
 import Newsletter from '../../../components/home/Newsletter';
 import Footer from '../../../components/defaults/Footer';
+import Container from '../../../components/defaults/Container';
 
 const IslamicHistory = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -45,7 +46,7 @@ const IslamicHistory = () => {
   ];
 
   return (
-    <div>
+    <Container>
       <Header color="black" />
 
       <div className="bg-[#F9FAFB]">
@@ -163,7 +164,7 @@ const IslamicHistory = () => {
 
       <Newsletter />
       <Footer />
-    </div>
+    </Container>
   );
 };
 

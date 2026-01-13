@@ -12,6 +12,8 @@ import Blog from './pages/blog';
 import Gallery from './pages/media/gallery';
 import QuranArabic from './pages/courses/quran-arabic';
 import IslamicHistory from './pages/courses/islamic-history';
+import IslamicTheology from './pages/courses/islamic-theology';
+import ChristianMuslimRelations from './pages/courses/christian-muslim-relations';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -29,6 +31,11 @@ const App = () => {
     // courses
     { path: '/courses/quran-arabic', element: <QuranArabic /> },
     { path: '/courses/islamic-history', element: <IslamicHistory /> },
+    { path: '/courses/islamic-theology', element: <IslamicTheology /> },
+    {
+      path: '/courses/christian-muslim-relations',
+      element: <ChristianMuslimRelations />,
+    },
   ]);
 
   return (
