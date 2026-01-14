@@ -4,6 +4,7 @@ import Footer from '../../../components/defaults/Footer';
 import Newsletter from '../../../components/home/Newsletter';
 import { TimerIcon } from '../../../components/Icons';
 import Container from '../../../components/defaults/Container';
+import { NavLink } from 'react-router-dom';
 
 const News = () => {
   const newsItems = [
@@ -15,6 +16,7 @@ const News = () => {
       imageUrl: '/assets/blog-img-one.png',
       date: '15 Nov, 2023',
       author: 'Admin',
+      url: '/news/1',
     },
     {
       id: 2,
@@ -24,6 +26,7 @@ const News = () => {
       imageUrl: '/assets/hero-imgs/img-three.png',
       date: '17 Sep, 2017',
       author: 'Admin',
+      url: '/news/2',
     },
     {
       id: 3,
@@ -33,6 +36,7 @@ const News = () => {
       imageUrl: '/assets/blog-img-three.png',
       date: '08 Apr, 2017',
       author: 'Admin',
+      url: '/news/3',
     },
   ];
 
@@ -100,15 +104,19 @@ const News = () => {
                 className="flex lg:flex-row flex-col-reverse justify-between lg:items-center lg:space-x-6"
               >
                 <div className="space-y-3 lg:mt-0 mt-4">
-                  <h2 className="text-[24px] font-semibold">{item.title}</h2>
+                  <NavLink to={item.url}>
+                    <h2 className="text-[24px] font-semibold">{item.title}</h2>
+                  </NavLink>
                   <p className="">{item.excerpt}</p>
                   <div className="flex justify-between">
                     <span className="text-[#475467] text-[12px]">
                       {item.date}
                     </span>
-                    <span className="text-[#214832] text-[12px]">
-                      Read more
-                    </span>
+                    <NavLink to={item.url}>
+                      <span className="text-[#214832] text-[12px]">
+                        Read more
+                      </span>
+                    </NavLink>
                   </div>
                 </div>
                 <div className="lg:w-[25%] lg:mt-0 mt-6">

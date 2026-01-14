@@ -17,6 +17,7 @@ import ChristianMuslimRelations from './pages/courses/christian-muslim-relations
 import IntroToIslam from './pages/courses/intro-to-islam';
 import PostOne from './pages/blog/post-one';
 import PostTwo from './pages/blog/post-two';
+import NewsOne from './pages/media/news/news-one';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -46,6 +47,10 @@ const App = () => {
 
     // blog posts
     { path: '/blog/1', element: <PostOne /> },
+    { path: '/blog/2', element: <PostTwo /> },
+
+    // news posts
+    { path: '/news/1', element: <NewsOne /> },
     { path: '/blog/2', element: <PostTwo /> },
   ]);
 

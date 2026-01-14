@@ -158,7 +158,11 @@ const Blog = () => {
                   className="flex lg:flex-row flex-col-reverse justify-between lg:items-center lg:space-x-6"
                 >
                   <div className="space-y-3 mt-4 lg:mt-0">
-                    <h2 className="text-[24px] font-semibold">{item.title}</h2>
+                    <NavLink to={item.url}>
+                      <h2 className="text-[24px] font-semibold">
+                        {item.title}
+                      </h2>
+                    </NavLink>
                     <p>{item.excerpt}</p>
                     <div className="flex justify-between">
                       <span className="text-[#475467] text-[12px]">
