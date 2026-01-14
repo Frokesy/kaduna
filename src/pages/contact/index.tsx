@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Container from '../../components/defaults/Container';
 import Footer from '../../components/defaults/Footer';
 import Header from '../../components/defaults/Header';
@@ -7,10 +8,93 @@ import {
   ContactLocationTag,
   ContactPhoneTag,
 } from '../../components/Icons';
+import { render } from '@react-email/render';
+import Plunk from '@plunk/node';
+import { Slide, toast, ToastContainer } from 'react-toastify';
+import { ContactUserTemplate } from '../../components/email-templates/contact/ToUser';
+import { ContactAdminTemplate } from '../../components/email-templates/contact/ToAdmin';
 
 const Contact = () => {
+  const [data, setData] = useState({
+    fname: '',
+    lname: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+  const [loading, setLoading] = useState(false);
+
+  const plunkSecret = import.meta.env.VITE_PLUNK_SECRET;
+  const plunkClient = new Plunk(plunkSecret);
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async () => {
+    if (!data.fname || !data.email || !data.message) {
+      toast.error('Please fill in required fields.', {
+        position: 'top-center',
+        autoClose: 2000,
+        transition: Slide,
+        hideProgressBar: true,
+      });
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const adminEmailHtml = await render(<ContactAdminTemplate {...data} />);
+      await plunkClient.emails.send({
+        to: 'ayanfeoluwaakindele24@gmail.com',
+        subject: '📩 New Contact Form Submission',
+        body: adminEmailHtml,
+      });
+
+      const userEmailHtml = await render(
+        <ContactUserTemplate firstname={data.fname} />
+      );
+      await plunkClient.emails.send({
+        to: data.email,
+        subject: '✅ We received your message',
+        body: userEmailHtml,
+      });
+
+      toast.success('🎉 Message sent successfully!', {
+        position: 'top-center',
+        autoClose: 2000,
+        transition: Slide,
+        hideProgressBar: true,
+      });
+
+      setData({
+        fname: '',
+        lname: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Error sending contact form:', error);
+      toast.error('Something went wrong. Please try again.', {
+        position: 'top-center',
+        autoClose: 2000,
+        transition: Slide,
+        hideProgressBar: true,
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <Container>
+      <ToastContainer />
       <Header color="black" />
 
       <div className="flex lg:flex-row flex-col justify-between items-center my-10">
@@ -26,6 +110,9 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="First name"
+                  value={data.fname}
+                  onChange={handleChange}
+                  name="fname"
                   className="border border-[#cccccc] outline-none rounded-md p-3"
                 />
               </div>
@@ -34,6 +121,9 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="Last name"
+                  value={data.lname}
+                  onChange={handleChange}
+                  name="lname"
                   className="border border-[#cccccc] outline-none rounded-md p-3"
                 />
               </div>
@@ -43,6 +133,9 @@ const Contact = () => {
               <input
                 type="email"
                 placeholder="johndoe@gmail.com"
+                value={data.email}
+                onChange={handleChange}
+                name="email"
                 className="border border-[#cccccc] outline-none rounded-md p-3"
               />
             </div>
@@ -51,6 +144,9 @@ const Contact = () => {
               <input
                 type="number"
                 placeholder="+234 801 234 5678"
+                value={data.phone}
+                onChange={handleChange}
+                name="phone"
                 className="border border-[#cccccc] outline-none rounded-md p-3"
               />
             </div>
@@ -59,6 +155,9 @@ const Contact = () => {
               <textarea
                 rows={5}
                 placeholder="Type your message here"
+                value={data.message}
+                onChange={handleChange}
+                name="message"
                 className="border border-[#cccccc] outline-none rounded-md p-3 resize-none"
               />
             </div>
@@ -69,8 +168,38 @@ const Contact = () => {
                 <span className="underline">privacy policy</span>
               </span>
             </div>
-            <button className="bg-[#2F6646] w-full text-white px-6 py-3 rounded-md mt-4">
-              Send Message
+            <button
+              onClick={handleSubmit}
+              disabled={loading}
+              className="bg-[#2F6646] w-full text-white px-6 py-3 rounded-md mt-4"
+            >
+              {loading ? (
+                <div className="flex items-center justify-center">
+                  <svg
+                    className="animate-spin h-5 w-5 text-white mr-2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                    ></path>
+                  </svg>
+                  <span> Sending...</span>
+                </div>
+              ) : (
+                'Send Message'
+              )}
             </button>
           </div>
         </div>
