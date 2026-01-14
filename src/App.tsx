@@ -19,6 +19,7 @@ import PostOne from './pages/blog/post-one';
 import PostTwo from './pages/blog/post-two';
 import NewsOne from './pages/media/news/news-one';
 import NewsTwo from './pages/media/news/news-two';
+import NewsThree from './pages/media/news/news-three';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -53,6 +54,7 @@ const App = () => {
     // news posts
     { path: '/news/1', element: <NewsOne /> },
     { path: '/news/2', element: <NewsTwo /> },
+    { path: '/news/3', element: <NewsThree /> },
   ]);
 
   return (
