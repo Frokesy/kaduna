@@ -10,6 +10,7 @@ type BlogItem = {
   imageUrl: string;
   date: string;
   author: string;
+  url?: string;
 };
 
 const Blog = () => {
@@ -27,6 +28,7 @@ const Blog = () => {
       imageUrl: '/assets/blog-img-one.png',
       date: '15 Nov, 2023',
       author: 'Admin',
+      url: '/news/1',
     },
     {
       id: 2,
@@ -36,6 +38,7 @@ const Blog = () => {
       imageUrl: '/assets/hero-imgs/img-three.png',
       date: '15 Nov, 2023',
       author: 'Admin',
+      url: '/news/2',
     },
     {
       id: 3,
@@ -45,6 +48,7 @@ const Blog = () => {
       imageUrl: '/assets/blog-img-three.png',
       date: '15 Nov, 2023',
       author: 'Admin',
+      url: '/news/3',
     },
   ];
 
@@ -57,6 +61,7 @@ const Blog = () => {
       imageUrl: '/assets/blog-imgs/img-one.jpg',
       date: '16 Aug, 2012',
       author: 'Admin',
+      url: '/blog/1',
     },
     {
       id: 2,
@@ -66,6 +71,7 @@ const Blog = () => {
       imageUrl: '/assets/blog-imgs/img-two.jpg',
       date: '05 Jan, 2011',
       author: 'Admin',
+      url: '/blog/2',
     },
   ];
 
@@ -152,9 +158,11 @@ const Blog = () => {
 
                   <div className="p-4 flex flex-col justify-between flex-1">
                     <div>
-                      <h3 className="text-[#101B28] text-[20px] font-semibold mt-2">
-                        {item.title}
-                      </h3>
+                      <NavLink to={item.url || '#'}>
+                        <h3 className="text-[#101B28] text-[20px] font-semibold mt-2">
+                          {item.title}
+                        </h3>
+                      </NavLink>
                       <p className="text-[#344054] mt-2">{item.excerpt}</p>
                     </div>
 
