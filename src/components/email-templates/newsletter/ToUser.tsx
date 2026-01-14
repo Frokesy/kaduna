@@ -9,15 +9,8 @@ import {
   Text,
   Link,
 } from '@react-email/components';
-import type { FC } from 'react';
 
-interface NewsletterUserTemplateProps {
-  firstname?: string;
-}
-
-export const NewsletterUserTemplate: FC<NewsletterUserTemplateProps> = ({
-  firstname,
-}) => {
+export const NewsletterUserTemplate = () => {
   return (
     <Html>
       <Head />
@@ -27,7 +20,7 @@ export const NewsletterUserTemplate: FC<NewsletterUserTemplateProps> = ({
           style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}
         >
           <Heading style={{ textAlign: 'center', color: '#7d6c3a' }}>
-            Hi {firstname || 'there'}, thanks for signing up!
+            Hi there, thanks for signing up!
           </Heading>
           <Section>
             <Text style={styles.text}>

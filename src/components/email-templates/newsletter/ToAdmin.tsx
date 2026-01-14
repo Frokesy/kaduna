@@ -11,12 +11,10 @@ import {
 import type { FC } from 'react';
 
 interface NewsletterAdminTemplateProps {
-  name?: string;
   email: string;
 }
 
 export const NewsletterAdminTemplate: FC<NewsletterAdminTemplateProps> = ({
-  name,
   email,
 }) => {
   return (
@@ -36,9 +34,6 @@ export const NewsletterAdminTemplate: FC<NewsletterAdminTemplateProps> = ({
             </Text>
 
             <Section style={styles.section}>
-              <Text style={styles.detail}>
-                <b>Name:</b> {name || 'Not provided'}
-              </Text>
               <Text style={styles.detail}>
                 <b>Email:</b> {email}
               </Text>
